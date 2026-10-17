@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sala de Metas CREW</title>
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'%3E%3Crect width='30' height='20' fill='%23fff'/%3E%3Ccircle cx='15' cy='10' r='6' fill='%23bc002d'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css?v=20261017">
+</head>
+<body>
+  <div id="app"><div class="loading">Carregando…</div></div>
+
+  <dialog id="dlg-new">
+    <form id="form-new" method="dialog">
+      <h2>Nova sala de farm</h2>
+      <div class="row2">
+        <label>ID<input name="game_id" inputmode="numeric" autocomplete="off"></label>
+        <label>Nome<input name="name" autocomplete="off"></label>
+      </div>
+      <label>Cargo
+        <select name="cargo">
+          <option value="morador">Morador</option>
+          <option value="membro">Membro</option>
+          <option value="soldado">Soldado</option>
+          <option value="gerencia">Gerência</option>
+        </select>
+      </label>
+      <label>Meta semanal (opcional)<input name="meta" placeholder="ex.: 150 peças de arma"></label>
+      <details>
+        <summary>Adicionar vários de uma vez</summary>
+        <label>Um por linha: <code>ID Nome</code> (todos entram no cargo escolhido acima)
+          <textarea name="bulk" rows="6" placeholder="54528 Style&#10;48232 Victor Oliveira"></textarea>
+        </label>
+      </details>
+      <div class="actions">
+        <button type="button" class="btn ghost" data-close>Cancelar</button>
+        <button type="submit" class="btn primary">Criar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="lightbox" hidden><img alt="Imagem da meta"></div>
+  <div id="toast" hidden></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="config.js?v=20261017"></script>
+  <script src="membros.js?v=20261017"></script>
+  <script src="app.js?v=20261017"></script>
+</body>
+</html>
